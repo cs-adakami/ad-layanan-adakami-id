@@ -27,7 +27,7 @@ function App() {
 
         <div className="bg-white rounded-2xl p-6 mb-8 text-center">
           <div className="bg-[#00b894] text-black font-bold text-lg px-4 py-3 rounded-t-xl mb-4">
-            Cara mendapatkan keringan pembayaran pinjol AdaKami
+            Cara mendapatkan keringan pembayaran AdaKami
           </div>
 
           <div className="flex items-center justify-center gap-6 mb-4">
