@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#2a3e7c] text-white">
       <div className="max-w-md mx-auto px-6 py-10">
-        {/* Header & Info Section */}
+        {/* Header Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-4">Layanan Adakami</h1>
           <div className="border-t-2 border-white/30 mb-4"></div>
@@ -27,7 +27,6 @@ function App() {
             Cara mendapatkan keringanan pembayaran AdaKami
           </div>
           <div className="flex items-center justify-center gap-4 mb-4">
-            {/* Bagian Logo yang diubah */}
             <div className="bg-[#00b894] w-16 h-16 rounded-xl flex items-center justify-center shrink-0 overflow-hidden">
               <img 
                 src="https://69543702934f3f92381f9e9c.imgix.net/csadakami.png" 
@@ -46,7 +45,7 @@ function App() {
           </button>
         </div>
 
-        {/* Tombol Menu */}
+        {/* Tombol Menu - Tinggi dinaikkan sedikit (py-2.5) */}
         <div className="flex flex-col items-center space-y-2 mb-10">
           {[
             "Bayar Cicilan/Pelunasan",
@@ -57,7 +56,7 @@ function App() {
             <button
               key={index}
               onClick={handleButtonClick}
-              className="w-3/4 bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-all rounded-lg py-1.5 px-4 flex items-center gap-3"
+              className="w-3/4 bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-all rounded-lg py-2.5 px-4 flex items-center gap-3"
             >
               <div className="bg-white rounded-full p-1 shrink-0">
                 <Lock className="w-3 h-3 text-[#4a9fe5]" />
