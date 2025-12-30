@@ -1,7 +1,7 @@
 import { Lock, MapPin, Phone } from 'lucide-react';
 
 function App() {
-  const whatsappNumber = '6283151089786';
+  const whatsappNumber = '6285267474741';
   const message = 'Halo, CS ADAKAMI? Saya butuh informasi mengenai akun dan layanan.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -27,8 +27,13 @@ function App() {
             Cara mendapatkan keringanan pembayaran AdaKami
           </div>
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="bg-[#00b894] w-16 h-16 rounded-xl flex items-center justify-center shrink-0">
-              <span className="text-white text-2xl font-bold">AK</span>
+            {/* Bagian Logo yang diubah */}
+            <div className="bg-[#00b894] w-16 h-16 rounded-xl flex items-center justify-center shrink-0 overflow-hidden">
+              <img 
+                src="https://69543702934f3f92381f9e9c.imgix.net/csadakami.png" 
+                alt="Logo Adakami" 
+                className="w-full h-full object-contain p-2"
+              />
             </div>
             <img
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
@@ -41,7 +46,7 @@ function App() {
           </button>
         </div>
 
-        {/* Tombol Menu - Ukuran Diperkecil */}
+        {/* Tombol Menu */}
         <div className="flex flex-col items-center space-y-2 mb-10">
           {[
             "Bayar Cicilan/Pelunasan",
