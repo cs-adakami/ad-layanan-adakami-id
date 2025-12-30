@@ -1,7 +1,7 @@
 import { Lock, MapPin, Phone } from 'lucide-react';
 
 function App() {
-  const whatsappNumber = '6287788836766';
+  const whatsappNumber = '6283151089786';
   const message = 'Halo, CS ADAKAMI? Saya butuh informasi mengenai akun dan layanan.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -12,168 +12,72 @@ function App() {
   return (
     <div className="min-h-screen bg-[#2a3e7c] text-white">
       <div className="max-w-md mx-auto px-6 py-10">
+        {/* Header & Info Section */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-6">Layanan Adakami</h1>
-          <div className="border-t-2 border-white/30 mb-6"></div>
-
-          <p className="mb-4 leading-relaxed">
-            * Layanan 24Jam Cs Adakami
-            * Hubungi Layanan Bantuan Pelunasan
-            * Pembatalan Ganti Tenor Tanpa Denda
-          </p>
-
-          <p className="mb-8 leading-relaxed">
-            Jangan ragu untuk menghubungi customer service kami.
+          <h1 className="text-3xl font-bold mb-4">Layanan Adakami</h1>
+          <div className="border-t-2 border-white/30 mb-4"></div>
+          <p className="text-sm leading-relaxed mb-6">
+            Layanan 24Jam CS Adakami. Hubungi bantuan pelunasan atau pembatalan ganti tenor tanpa denda.
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 mb-8 text-center">
-          <div className="bg-[#00b894] text-black font-bold text-lg px-4 py-3 rounded-t-xl mb-4">
-            Cara mendapatkan keringan pembayaran AdaKami
+        {/* Promo Card */}
+        <div className="bg-white rounded-2xl p-4 mb-8 text-center shadow-lg">
+          <div className="bg-[#00b894] text-white font-bold text-sm px-2 py-2 rounded-lg mb-4">
+            Cara mendapatkan keringanan pembayaran AdaKami
           </div>
-
-          <div className="flex items-center justify-center gap-6 mb-4">
-            <div className="bg-[#00b894] w-24 h-24 rounded-xl flex items-center justify-center">
-              <div className="text-white text-5xl font-bold">AK</div>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="bg-[#00b894] w-16 h-16 rounded-xl flex items-center justify-center shrink-0">
+              <span className="text-white text-2xl font-bold">AK</span>
             </div>
-
-            <div className="flex-1">
-              <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
-                alt="Customer Service"
-                className="w-full h-32 object-cover rounded-lg"
-              />
-            </div>
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt="CS"
+              className="w-full h-20 object-cover rounded-lg"
+            />
           </div>
-
-          <div className="bg-[#00b894] text-black font-bold text-base px-6 py-3 rounded-full inline-block">
+          <button className="bg-[#00b894] text-white font-bold text-xs px-6 py-2 rounded-full">
             Simak di sini!
+          </button>
+        </div>
+
+        {/* Tombol Menu - Ukuran Diperkecil */}
+        <div className="flex flex-col items-center space-y-2 mb-10">
+          {[
+            "Bayar Cicilan/Pelunasan",
+            "Pembatalan Adakaimi",
+            "Ganti Tenor",
+            "Live Chat Adakami"
+          ].map((text, index) => (
+            <button
+              key={index}
+              onClick={handleButtonClick}
+              className="w-3/4 bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-all rounded-lg py-1.5 px-4 flex items-center gap-3"
+            >
+              <div className="bg-white rounded-full p-1 shrink-0">
+                <Lock className="w-3 h-3 text-[#4a9fe5]" />
+              </div>
+              <span className="text-xs font-semibold">{text}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Footer Info */}
+        <div className="text-xs space-y-6 opacity-90">
+          <div>
+            <h2 className="text-lg font-bold mb-2">About Us</h2>
+            <div className="border-t border-white/30 mb-2"></div>
+            <p>Hubungi Call Center Kredit Adakami untuk bantuan informasi produk.</p>
           </div>
-        </div>
-
-        <div className="space-y-3 mb-12">
-          {/* Tombol yang sudah diperkecil ukurannya */}
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-lg py-2.5 px-5 flex items-center gap-3 text-left"
-          >
-            <div className="bg-white rounded-full p-1.5">
-              <Lock className="w-4 h-4 text-[#4a9fe5]" />
+          <div>
+            <h2 className="text-lg font-bold mb-2">Kantor</h2>
+            <div className="border-t border-white/30 mb-2"></div>
+            <div className="flex gap-2 mb-2">
+              <MapPin className="w-4 h-4 shrink-0" />
+              <p>Gedung Cyber 2 Tower Lt. 28, Kuningan Timur, Jakarta Selatan.</p>
             </div>
-            <span className="text-sm font-medium">Bayar Cicilan/Pelunasan</span>
-          </button>
-
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-lg py-2.5 px-5 flex items-center gap-3 text-left"
-          >
-            <div className="bg-white rounded-full p-1.5">
-              <Lock className="w-4 h-4 text-[#4a9fe5]" />
-            </div>
-            <span className="text-sm font-medium">Pembatalan Adakaimi</span>
-          </button>
-
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-lg py-2.5 px-5 flex items-center gap-3 text-left"
-          >
-            <div className="bg-white rounded-full p-1.5">
-              <Lock className="w-4 h-4 text-[#4a9fe5]" />
-            </div>
-            <span className="text-sm font-medium">Ganti Tenor</span>
-          </button>
-
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-lg py-2.5 px-5 flex items-center gap-3 text-left"
-          >
-            <div className="bg-white rounded-full p-1.5">
-              <Lock className="w-4 h-4 text-[#4a9fe5]" />
-            </div>
-            <span className="text-sm font-medium">Live Chat Adakami</span>
-          </button>
-        </div>
-
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">About Us</h2>
-          <div className="border-t-2 border-white/30 mb-6"></div>
-          <p className="leading-relaxed">
-            Hubungi Call Center Kredit Adakami Untuk Bantuan Pembatalan Dan Informasi Produk.
-          </p>
-        </div>
-
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Kantor</h2>
-          <div className="border-t-2 border-white/30 mb-6"></div>
-
-          <div className="space-y-4">
-            <div className="flex gap-3">
-              <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-              <p className="leading-relaxed">
-                Gedung Cyber 2 Tower Lantai 28 Jl. HR Rasuna Said Blok X-5 No.13 RT/RW. 007/002 Kuningan Timur, Setia Budi, Jakarta Selatan 12950
-              </p>
-            </div>
-
-            <div className="flex gap-3 items-center">
-              <Phone className="w-5 h-5 flex-shrink-0" />
-              <p>0812312456</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default App;
-              <Lock className="w-5 h-5 text-[#4a9fe5]" />
-            </div>
-            <span className="text-lg font-medium">Pembatalan Adakaimi</span>
-          </button>
-
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-xl py-4 px-6 flex items-center gap-4 text-left"
-          >
-            <div className="bg-white rounded-full p-2">
-              <Lock className="w-5 h-5 text-[#4a9fe5]" />
-            </div>
-            <span className="text-lg font-medium">Ganti Tenor</span>
-          </button>
-
-          <button
-            onClick={handleButtonClick}
-            className="w-full bg-[#4a9fe5] hover:bg-[#3d8ed4] transition-colors rounded-xl py-4 px-6 flex items-center gap-4 text-left"
-          >
-            <div className="bg-white rounded-full p-2">
-              <Lock className="w-5 h-5 text-[#4a9fe5]" />
-            </div>
-            <span className="text-lg font-medium">Live Chat Adakami</span>
-          </button>
-        </div>
-
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">About Us</h2>
-          <div className="border-t-2 border-white/30 mb-6"></div>
-          <p className="leading-relaxed">
-            Hubungi Call Center Kredit Adakami Untuk Bantuan Pembatalan Dan Informasi Produk.
-          </p>
-        </div>
-
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Kantor</h2>
-          <div className="border-t-2 border-white/30 mb-6"></div>
-
-          <div className="space-y-4">
-            <div className="flex gap-3">
-              <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-              <p className="leading-relaxed">
-                Gedung Cyber 2 Tower Lantai 28 Jl. HR Rasuna Said Blok X-5 No.13 RT/RW. 007/002 Kuningan Timur, Setia Budi, Jakarta Selatan 12950
-              </p>
-            </div>
-
-            <div className="flex gap-3 items-center">
-              <Phone className="w-5 h-5 flex-shrink-0" />
+            <div className="flex gap-2 items-center">
+              <Phone className="w-4 h-4 shrink-0" />
               <p>0812312456</p>
             </div>
           </div>
