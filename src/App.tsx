@@ -1,8 +1,8 @@
 import { Lock, MapPin, Phone } from 'lucide-react';
 
 function App() {
-  const whatsappNumber = '628137750397';
-  const message = 'Halo, CS ADAKAMI? Saya butuh informasi mengenai akun dan layanan.';
+  const whatsappNumber = '62822333391';
+  const message = 'Hallo, CS ADAKAMI? Saya butuh informasi mengenai akun dan layanan.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   const handleButtonClick = () => {
