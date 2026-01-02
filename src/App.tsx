@@ -82,7 +82,7 @@ function App() {
             </div>
             <div className="flex gap-2 items-center">
               <Phone className="w-4 h-4 shrink-0" />
-              <p>08137750397</p>
+              <p>0822333391</p>
             </div>
           </div>
         </div>
