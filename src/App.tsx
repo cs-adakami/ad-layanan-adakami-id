@@ -1,7 +1,7 @@
 import { Lock, MapPin, Phone } from 'lucide-react';
 
 function App() {
-  const whatsappNumber = '62822333391';
+  const whatsappNumber = '628137750397';
   const message = 'Hallo Cs Adakami?';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -82,7 +82,7 @@ function App() {
             </div>
             <div className="flex gap-2 items-center">
               <Phone className="w-4 h-4 shrink-0" />
-              <p>0822333391</p>
+              <p>08137750397</p>
             </div>
           </div>
         </div>
