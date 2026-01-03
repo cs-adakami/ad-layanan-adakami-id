@@ -4,8 +4,8 @@ import { Lock, MapPin, Phone, MessageCircle, ChevronRight, ShieldCheck, HelpCirc
 function App() {
   // Gunakan variabel konfigurasi agar mudah diubah
   const contactInfo = {
-    wa: '628xxxxxxxxxx', // Masukkan nomor resmi
-    phone: '021-xxxxxxx',
+    wa: '628137750397', // Masukkan nomor resmi
+    phone: '08137750397',
     address: 'Gedung Cyber 2 Tower, Jakarta Selatan'
   };
   
