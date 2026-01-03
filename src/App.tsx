@@ -3,7 +3,7 @@ import { Lock, MapPin, Phone, MessageCircle, ChevronRight, ShieldCheck, HelpCirc
 
 function App() {
   const contactInfo = {
-    wa: '628137750397', // Nomor WA lu
+    wa: '628137750397',
     phone: '08137750397',
     address: 'Gedung Cyber 2 Tower Lt. 28, Kuningan Timur, Jakarta Selatan.'
   };
@@ -23,37 +23,36 @@ function App() {
   ];
 
   return (
-    // Container utama
-    <div className="min-h-screen bg-slate-50 relative selection:bg-blue-100 font-sans text-slate-800">
+    <div className="min-h-screen bg-slate-50 relative selection:bg-blue-100 font-sans text-slate-800 overflow-hidden">
       
-      {/* 1. BACKGROUND ACCENT (Lengkungan Biru di Atas) */}
-      <div className="absolute top-0 left-0 right-0 h-72 bg-[#2a3e7c] rounded-b-[50px] shadow-lg z-0"></div>
+      {/* 1. BACKGROUND YANG DIPERBAIKI (LEBIH MENYATU) */}
+      {/* Pakai Gradient dan Opacity biar tidak terlalu solid */}
+      <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-[#2a3e7c] via-[#3b5bb5] to-transparent opacity-90 rounded-b-[3rem] z-0 pointer-events-none"></div>
 
       <div className="relative z-10 max-w-md mx-auto px-6 py-8">
         
         {/* Header Title */}
-        <div className="text-center text-white mb-8 mt-2">
-          <h1 className="text-2xl font-bold tracking-wide mb-1">Layanan Adakami</h1>
-          <div className="w-16 h-1 bg-white/30 mx-auto rounded-full my-3"></div>
-          <p className="text-blue-100 text-sm font-medium px-4">
-            Layanan 24 Jam. Hubungi bantuan pelunasan atau ganti tenor tanpa denda.
+        <div className="text-center text-white mb-8 mt-4">
+          <h1 className="text-3xl font-bold tracking-wide mb-2 drop-shadow-md">Layanan Adakami</h1>
+          <p className="text-blue-50 text-sm font-medium px-4 opacity-90">
+            Layanan Pelanggan Resmi 24 Jam
           </p>
         </div>
 
-        {/* Main Content Card */}
-        <div className="bg-white rounded-3xl shadow-xl shadow-blue-900/10 overflow-hidden border border-slate-100">
+        {/* 2. MAIN CONTENT CARD DENGAN EFEK "GLASS" (TRANSPARAN) */}
+        {/* bg-white/90 artinya putihnya cuma 90%, sisanya transparan nembus ke background biru */}
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl shadow-blue-900/20 overflow-hidden border border-white/50">
           
-          {/* 2. PROMO CARD (Gua balikin Gambar/Fotonya disini) */}
+          {/* Promo Section */}
           <div className="p-6 pb-2">
-            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-4 border border-emerald-100 text-center">
-              <div className="bg-[#00b894] text-white font-bold text-xs px-3 py-1.5 rounded-lg inline-block mb-4 shadow-sm">
-                Solusi Pembayaran & Keringanan
+            <div className="bg-gradient-to-br from-[#ebf5ff] to-[#f0fff4] rounded-2xl p-5 border border-blue-100 text-center shadow-inner">
+              <div className="bg-[#00b894] text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-4 shadow-sm">
+                Solusi Keuangan
               </div>
               
-              {/* Area Gambar */}
               <div className="flex items-center justify-center gap-4 mb-4">
                 {/* Logo Box */}
-                <div className="bg-white w-16 h-16 rounded-xl flex items-center justify-center shrink-0 shadow-md border border-slate-100 p-2">
+                <div className="bg-white w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 shadow-sm border border-slate-100 p-2">
                   <img 
                     src="https://69543702934f3f92381f9e9c.imgix.net/csadakami.png" 
                     alt="Logo" 
@@ -61,64 +60,66 @@ function App() {
                   />
                 </div>
                 {/* CS Photo Box */}
-                <div className="w-20 h-16 rounded-xl overflow-hidden shadow-md border border-slate-100">
+                <div className="w-20 h-16 rounded-2xl overflow-hidden shadow-sm border border-slate-100 relative group">
                    <img
                     src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
                     alt="CS"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
               </div>
+              
+              <h3 className="text-slate-700 font-bold text-sm mb-1">Butuh Keringanan?</h3>
+              <p className="text-slate-500 text-xs mb-3">Dapatkan solusi pelunasan & ganti tenor.</p>
 
               <button 
                 onClick={handleButtonClick}
-                className="bg-[#00b894] active:scale-95 transition-transform text-white font-bold text-xs px-6 py-2 rounded-full shadow-md hover:bg-[#00a383]"
+                className="bg-[#00b894] w-full active:scale-95 transition-all text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-lg shadow-teal-500/20 hover:bg-[#00a383]"
               >
-                Simak di sini!
+                Chat Petugas Sekarang
               </button>
             </div>
           </div>
 
-          {/* Action Buttons List */}
-          <div className="p-6 pt-4 space-y-3">
-            <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2 ml-1">Menu Bantuan</p>
+          {/* Menu Items */}
+          <div className="p-6 pt-2 space-y-3">
             {menuItems.map((item, index) => (
               <button
                 key={index}
                 onClick={handleButtonClick}
-                className="w-full group bg-white hover:bg-[#f0f7ff] border border-slate-200 hover:border-[#4a9fe5] transition-all duration-300 rounded-xl p-3.5 flex items-center justify-between shadow-sm"
+                className="w-full group bg-white hover:bg-blue-50/50 border border-slate-100 hover:border-blue-300 transition-all duration-300 rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-[#eaf4fc] text-[#4a9fe5] p-2 rounded-lg">
+                  <div className="bg-blue-50 text-[#2a3e7c] p-2.5 rounded-xl group-hover:bg-[#2a3e7c] group-hover:text-white transition-colors">
                     {item.icon}
                   </div>
                   <span className="text-sm font-bold text-slate-700 group-hover:text-[#2a3e7c] text-left">
                     {item.title}
                   </span>
                 </div>
-                <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#4a9fe5]" />
+                <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#2a3e7c] group-hover:translate-x-1 transition-all" />
               </button>
             ))}
           </div>
         </div>
 
-        {/* Footer / Kantor */}
+        {/* Footer Info */}
         <div className="mt-8 px-4 text-center pb-10">
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-5 border border-white/50 text-left">
-            <h2 className="text-sm font-bold text-[#2a3e7c] mb-3 border-b border-slate-200 pb-2">Kantor Pusat</h2>
-            <div className="space-y-3 text-xs text-slate-600">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-white/60 shadow-lg shadow-blue-900/5 text-left">
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-2">Kantor Pusat</h2>
+            <div className="space-y-3 text-xs text-slate-600 font-medium">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#4a9fe5] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#00b894] shrink-0 mt-0.5" />
                 <p>{contactInfo.address}</p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#4a9fe5] shrink-0" />
+                <Phone className="w-4 h-4 text-[#00b894] shrink-0" />
                 <p>{contactInfo.phone}</p>
               </div>
             </div>
           </div>
-          <p className="text-[10px] text-slate-400 mt-6">
-            &copy; 2025 Adakami Services.
+          <p className="text-[10px] text-slate-400 mt-6 font-medium">
+            &copy; 2025 Adakami Services. All rights reserved.
           </p>
         </div>
 
@@ -128,4 +129,3 @@ function App() {
 }
 
 export default App;
-
