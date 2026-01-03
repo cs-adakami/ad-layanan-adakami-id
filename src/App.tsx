@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lock, MapPin, Phone, MessageCircle, ChevronRight, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Lock, ChevronRight, ShieldCheck, HelpCircle, MessageCircle, Wallet, Clock, XCircle } from 'lucide-react';
 
 function App() {
   const contactInfo = {
@@ -15,112 +15,132 @@ function App() {
     window.open(whatsappUrl, '_blank');
   };
 
+  // Menu items dengan styling warna dan ikon yang lebih "hidup"
   const menuItems = [
-    { title: "Bayar Cicilan/Pelunasan", icon: <ShieldCheck size={24} /> },
-    { title: "Ganti Tenor", icon: <Lock size={24} /> },
-    { title: "Pembatalan Adakami", icon: <HelpCircle size={24} /> },
-    { title: "Live Chat Adakami", icon: <MessageCircle size={24} /> }
+    { 
+      title: "Bayar Cicilan/Pelunasan", 
+      icon: <Wallet size={24} className="text-white" />, 
+      color: "from-emerald-400 to-teal-500",
+      shadow: "shadow-emerald-500/30"
+    },
+    { 
+      title: "Ganti Tenor", 
+      icon: <Clock size={24} className="text-white" />, 
+      color: "from-orange-400 to-amber-500",
+      shadow: "shadow-orange-500/30"
+    },
+    { 
+      title: "Pembatalan Adakami", 
+      icon: <XCircle size={24} className="text-white" />, 
+      color: "from-rose-400 to-red-500",
+      shadow: "shadow-rose-500/30"
+    },
+    { 
+      title: "Live Chat Adakami", 
+      icon: <MessageCircle size={24} className="text-white" />, 
+      color: "from-blue-400 to-indigo-500",
+      shadow: "shadow-blue-500/30"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] relative selection:bg-blue-100 font-sans text-slate-800 overflow-hidden">
+    <div className="min-h-screen bg-[#f1f5f9] relative selection:bg-blue-100 font-sans text-slate-800 overflow-hidden">
       
       {/* Background Accent */}
-      <div className="absolute top-0 left-0 right-0 h-[450px] bg-gradient-to-b from-[#1e3a8a] via-[#2a4392] to-transparent opacity-95 rounded-b-[3.5rem] z-0 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 right-0 h-[400px] bg-gradient-to-b from-[#1e3a8a] via-[#2563eb] to-[#f1f5f9] rounded-b-[4rem] z-0 pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-md mx-auto px-6 py-8">
+      <div className="relative z-10 max-w-md mx-auto px-5 py-6">
         
-        {/* Header Title & Description */}
-        <div className="text-center text-white mb-10 mt-6">
-          <h1 className="text-3xl font-extrabold tracking-wide mb-3 drop-shadow-sm">Layanan Adakami</h1>
-          <p className="text-blue-100 text-sm font-medium px-6 leading-relaxed opacity-90">
-            Solusi resmi 24 Jam untuk bantuan pelunasan dan pengaturan tenor Anda.
+        {/* Header Title */}
+        <div className="text-center text-white mb-8 mt-4">
+          <h1 className="text-2xl font-extrabold tracking-wide mb-2 drop-shadow-md">Layanan Pelanggan</h1>
+          <p className="text-blue-100 text-xs font-medium px-8 opacity-90 leading-relaxed">
+            Pusat bantuan resmi 24/7 untuk segala kebutuhan transaksi Anda.
           </p>
         </div>
 
-        {/* MAIN CONTENT CARD */}
-        <div className="bg-white/95 backdrop-blur-lg rounded-[2rem] shadow-2xl shadow-blue-900/15 overflow-hidden border border-white/50 p-1">
+        {/* MAIN CARD CONTAINER */}
+        <div className="space-y-5">
           
-          {/* Promo Section */}
-          <div className="p-5">
-            <div className="bg-gradient-to-br from-white to-blue-50/30 rounded-[1.5rem] p-5 border border-blue-50 text-center shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)]">
+          {/* 1. Promo / Contact Card */}
+          <div className="bg-white rounded-[2rem] p-1 shadow-xl shadow-blue-900/10">
+            <div className="bg-gradient-to-b from-blue-50 to-white rounded-[1.8rem] p-6 border border-blue-100 text-center">
               
-              {/* Area Gambar */}
-              <div className="flex items-center justify-center gap-3 mb-5">
-                {/* Logo Box */}
-                <div className="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)] border border-slate-50 p-2">
-                  <img 
-                    src="https://69543702934f3f92381f9e9c.imgix.net/csadakami.png" 
-                    alt="Logo" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                {/* CS Photo Box */}
-                <div className="w-18 h-14 rounded-2xl overflow-hidden shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)] border border-slate-50 relative group">
-                   <img
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="CS"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
+              {/* Gambar CS & Logo */}
+              <div className="flex items-center justify-center gap-4 mb-4">
+                 <div className="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center p-2 border border-slate-100">
+                    <img 
+                      src="https://69543702934f3f92381f9e9c.imgix.net/csadakami.png" 
+                      alt="Logo" 
+                      className="w-full h-full object-contain"
+                    />
+                 </div>
+                 <div className="w-20 h-16 rounded-2xl overflow-hidden shadow-md border border-slate-100 relative">
+                    <img
+                      src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400"
+                      alt="CS"
+                      className="w-full h-full object-cover"
+                    />
+                 </div>
               </div>
               
-              <h3 className="text-[#1e3a8a] font-bold text-[15px] mb-1">Butuh Bantuan Prioritas?</h3>
-              <p className="text-slate-500 text-xs mb-4 leading-relaxed">
-                Dapatkan keringanan pembayaran resmi tanpa denda di sini.
+              <h3 className="text-slate-800 font-bold text-lg mb-1">Butuh Bantuan Cepat?</h3>
+              <p className="text-slate-500 text-xs mb-5 px-2">
+                Tim kami siap membantu kendala akun dan pembayaran Anda.
               </p>
 
               <button 
                 onClick={handleButtonClick}
-                className="w-full bg-gradient-to-r from-[#00b894] to-[#00a383] active:scale-[0.98] transition-all text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40"
+                className="w-full bg-[#00b894] hover:bg-[#00a383] active:scale-[0.98] transition-all text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-teal-500/25 flex items-center justify-center gap-2"
               >
-                Hubungi Petugas
+                <MessageCircle size={18} fill="currentColor" />
+                Hubungi Kami
               </button>
             </div>
           </div>
 
-          {/* MENU ITEMS */}
-          <div className="px-5 pb-6 pt-1 space-y-3">
+          {/* 2. Menu Buttons Grid - Tampilan Lebih Jelas & Tombol */}
+          <div className="grid gap-3">
             {menuItems.map((item, index) => (
               <button
                 key={index}
                 onClick={handleButtonClick}
-                className="w-full group bg-white hover:bg-blue-50/60 transition-all duration-300 rounded-[1.2rem] p-3 flex items-center justify-between shadow-[0_2px_8px_-4px_rgba(0,0,0,0.08)] hover:shadow-md border border-transparent"
+                className="relative group w-full bg-white hover:bg-slate-50 active:scale-[0.99] transition-all duration-300 rounded-2xl p-4 flex items-center justify-between shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] border border-slate-100 hover:border-blue-200 overflow-hidden"
               >
-                <div className="flex items-center gap-4">
+                {/* Decorative Blur Background inside button */}
+                <div className={`absolute -left-4 -top-4 w-16 h-16 bg-gradient-to-br ${item.color} opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity`}></div>
+
+                <div className="flex items-center gap-4 relative z-10">
                   
-                  {/* BAGIAN ICON/LOGO: Dibuat pas, tanpa border, background menyatu */}
-                  {/* 'w-12 h-12' memastikan bentuk kotak proporsional, 'flex justify-center' memastikan ikon di tengah */}
-                  <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-blue-50 text-[#1e3a8a] group-hover:bg-[#1e3a8a] group-hover:text-white transition-all duration-300">
+                  {/* Icon Box - Gradient & Shadow */}
+                  <div className={`w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br ${item.color} ${item.shadow} shadow-md transform group-hover:scale-110 transition-transform duration-300`}>
                     {item.icon}
                   </div>
                   
-                  {/* Teks Judul */}
-                  <span className="text-[14px] font-bold text-slate-700 group-hover:text-[#1e3a8a] text-left transition-colors">
-                    {item.title}
-                  </span>
+                  {/* Text Title */}
+                  <div className="text-left">
+                    <span className="block text-[15px] font-bold text-slate-700 group-hover:text-slate-900">
+                      {item.title}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-medium">Klik untuk akses</span>
+                  </div>
                 </div>
                 
-                {/* Ikon Panah Kanan */}
-                <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-[#1e3a8a] group-hover:translate-x-1 transition-all duration-300" />
+                {/* Arrow Icon */}
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                   <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
+                </div>
               </button>
             ))}
           </div>
+
         </div>
 
-        {/* Footer Info & Address (Ditampilkan sesuai permintaan keterangan) */}
-        <div className="mt-8 text-center pb-10 space-y-4">
-          
-          {/* Alamat Kantor */}
-          <div className="flex items-start justify-center gap-2 text-[11px] text-slate-500/80 font-medium px-4 leading-relaxed opacity-80">
-            <MapPin size={14} className="shrink-0 mt-0.5 text-[#1e3a8a]" />
-            <p>{contactInfo.address}</p>
-          </div>
-
-          {/* OJK Disclaimer */}
-          <p className="text-[11px] text-slate-400 font-medium flex items-center justify-center gap-1">
-            <ShieldCheck size={12} className="text-slate-400" />
-            Terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK).
+        {/* Footer Info */}
+        <div className="mt-8 text-center pb-8 opacity-60">
+          <p className="text-[10px] text-slate-500 font-medium flex items-center justify-center gap-1.5 bg-white/50 py-2 rounded-full mx-10">
+            <ShieldCheck size={14} className="text-slate-400" />
+            Terdaftar & Diawasi oleh OJK
           </p>
         </div>
 
