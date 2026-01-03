@@ -45,7 +45,7 @@ function App() {
           </button>
         </div>
 
-        {/* Tombol Menu - Tinggi dinaikkan sedikit (py-2.5) */}
+        {/* Tombol Menu */}
         <div className="flex flex-col items-center space-y-2 mb-10">
           {[
             "Bayar Cicilan/Pelunasan",
@@ -66,13 +66,30 @@ function App() {
           ))}
         </div>
 
-        {/* Footer Info */}
+        {/* About Us Section (Updated) */}
+        <div className="bg-white/10 rounded-2xl p-6 mb-8 text-sm leading-relaxed border border-white/10">
+          <h2 className="text-xl font-bold mb-3 text-center">Tentang Kami</h2>
+          <p className="mb-4 text-center opacity-90">
+            Selamat datang di platform kami! Kami adalah tim yang berdedikasi untuk memberikan solusi terbaik untuk lo.
+          </p>
+          <ul className="space-y-3">
+            <li>
+              <strong className="text-[#4a9fe5]">Visi:</strong><br/>
+              Menjadi mitra terpercaya dalam menghadirkan inovasi digital bagi Dede dan semua pengguna.
+            </li>
+            <li>
+              <strong className="text-[#4a9fe5]">Misi:</strong><br/>
+              Memberikan layanan berkualitas tinggi dengan transparansi dan integritas penuh.
+            </li>
+            <li>
+              <strong className="text-[#4a9fe5]">Cerita Kami:</strong><br/>
+              Berawal dari ide sederhana untuk mempermudah akses informasi bagi banyak orang.
+            </li>
+          </ul>
+        </div>
+
+        {/* Footer Info / Kantor */}
         <div className="text-xs space-y-6 opacity-90">
-          <div>
-            <h2 className="text-lg font-bold mb-2">About Us</h2>
-            <div className="border-t border-white/30 mb-2"></div>
-            <p>Hubungi Call Center Kredit Adakami untuk bantuan informasi produk.</p>
-          </div>
           <div>
             <h2 className="text-lg font-bold mb-2">Kantor</h2>
             <div className="border-t border-white/30 mb-2"></div>
