@@ -16,10 +16,10 @@ function App() {
   };
 
   const menuItems = [
-    { title: "Bayar Cicilan/Pelunasan", icon: <ShieldCheck size={22} /> },
-    { title: "Ganti Tenor", icon: <Lock size={22} /> },
-    { title: "Pembatalan Adakami", icon: <HelpCircle size={22} /> },
-    { title: "Live Chat Adakami", icon: <MessageCircle size={22} /> }
+    { title: "Bayar Cicilan/Pelunasan", icon: <ShieldCheck size={24} /> },
+    { title: "Ganti Tenor", icon: <Lock size={24} /> },
+    { title: "Pembatalan Adakami", icon: <HelpCircle size={24} /> },
+    { title: "Live Chat Adakami", icon: <MessageCircle size={24} /> }
   ];
 
   return (
@@ -30,7 +30,7 @@ function App() {
 
       <div className="relative z-10 max-w-md mx-auto px-6 py-8">
         
-        {/* Header Title */}
+        {/* Header Title & Description */}
         <div className="text-center text-white mb-10 mt-6">
           <h1 className="text-3xl font-extrabold tracking-wide mb-3 drop-shadow-sm">Layanan Adakami</h1>
           <p className="text-blue-100 text-sm font-medium px-6 leading-relaxed opacity-90">
@@ -79,20 +79,19 @@ function App() {
             </div>
           </div>
 
-          {/* MENU ITEMS - UPDATED */}
-          <div className="px-5 pb-6 pt-2 space-y-3">
+          {/* MENU ITEMS */}
+          <div className="px-5 pb-6 pt-1 space-y-3">
             {menuItems.map((item, index) => (
               <button
                 key={index}
                 onClick={handleButtonClick}
-                className="w-full group bg-white hover:bg-blue-50/50 transition-all duration-300 rounded-[1.2rem] p-3 flex items-center justify-between shadow-[0_2px_8px_-4px_rgba(0,0,0,0.08)] hover:shadow-md border border-transparent"
+                className="w-full group bg-white hover:bg-blue-50/60 transition-all duration-300 rounded-[1.2rem] p-3 flex items-center justify-between shadow-[0_2px_8px_-4px_rgba(0,0,0,0.08)] hover:shadow-md border border-transparent"
               >
                 <div className="flex items-center gap-4">
                   
-                  {/* BAGIAN LOGO/IKON: Diperbarui */}
-                  {/* Menggunakan fixed width/height (w-11 h-11) + Flex center agar ikon pas di tengah */}
-                  {/* bg-blue-50 memberikan warna latar tanpa border garis */}
-                  <div className="w-11 h-11 flex items-center justify-center rounded-2xl bg-blue-50 text-[#1e3a8a] group-hover:bg-[#1e3a8a] group-hover:text-white transition-all duration-300 shadow-sm">
+                  {/* BAGIAN ICON/LOGO: Dibuat pas, tanpa border, background menyatu */}
+                  {/* 'w-12 h-12' memastikan bentuk kotak proporsional, 'flex justify-center' memastikan ikon di tengah */}
+                  <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-blue-50 text-[#1e3a8a] group-hover:bg-[#1e3a8a] group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
                   
@@ -109,8 +108,16 @@ function App() {
           </div>
         </div>
 
-        {/* Footer Info */}
-        <div className="mt-6 text-center pb-10">
+        {/* Footer Info & Address (Ditampilkan sesuai permintaan keterangan) */}
+        <div className="mt-8 text-center pb-10 space-y-4">
+          
+          {/* Alamat Kantor */}
+          <div className="flex items-start justify-center gap-2 text-[11px] text-slate-500/80 font-medium px-4 leading-relaxed opacity-80">
+            <MapPin size={14} className="shrink-0 mt-0.5 text-[#1e3a8a]" />
+            <p>{contactInfo.address}</p>
+          </div>
+
+          {/* OJK Disclaimer */}
           <p className="text-[11px] text-slate-400 font-medium flex items-center justify-center gap-1">
             <ShieldCheck size={12} className="text-slate-400" />
             Terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK).
