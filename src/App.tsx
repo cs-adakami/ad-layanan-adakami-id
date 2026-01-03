@@ -16,16 +16,16 @@ function App() {
   };
 
   const menuItems = [
-    { title: "Bayar Cicilan/Pelunasan", icon: <ShieldCheck size={20} /> },
-    { title: "Ganti Tenor", icon: <Lock size={20} /> },
-    { title: "Pembatalan Adakami", icon: <HelpCircle size={20} /> },
-    { title: "Live Chat Adakami", icon: <MessageCircle size={20} /> }
+    { title: "Bayar Cicilan/Pelunasan", icon: <ShieldCheck size={22} /> },
+    { title: "Ganti Tenor", icon: <Lock size={22} /> },
+    { title: "Pembatalan Adakami", icon: <HelpCircle size={22} /> },
+    { title: "Live Chat Adakami", icon: <MessageCircle size={22} /> }
   ];
 
   return (
     <div className="min-h-screen bg-[#f8fafc] relative selection:bg-blue-100 font-sans text-slate-800 overflow-hidden">
       
-      {/* Background Accent - Dibuat lebih soft */}
+      {/* Background Accent */}
       <div className="absolute top-0 left-0 right-0 h-[450px] bg-gradient-to-b from-[#1e3a8a] via-[#2a4392] to-transparent opacity-95 rounded-b-[3.5rem] z-0 pointer-events-none"></div>
 
       <div className="relative z-10 max-w-md mx-auto px-6 py-8">
@@ -68,7 +68,7 @@ function App() {
               <h3 className="text-[#1e3a8a] font-bold text-[15px] mb-1">Butuh Bantuan Prioritas?</h3>
               <p className="text-slate-500 text-xs mb-4 leading-relaxed">
                 Dapatkan keringanan pembayaran resmi tanpa denda di sini.
-              </button>
+              </p>
 
               <button 
                 onClick={handleButtonClick}
@@ -79,22 +79,20 @@ function App() {
             </div>
           </div>
 
-          {/* MENU ITEMS - BAGIAN YANG DIMINTA */}
-          <div className="px-5 pb-6 pt-2 space-y-2.5">
+          {/* MENU ITEMS - UPDATED */}
+          <div className="px-5 pb-6 pt-2 space-y-3">
             {menuItems.map((item, index) => (
               <button
                 key={index}
                 onClick={handleButtonClick}
-                // PERUBAHAN 1: Menghapus border pada tombol utama agar lebih seamless.
-                // Menggunakan shadow yang sangat halus sebagai gantinya.
-                className="w-full group bg-white hover:bg-blue-50/40 transition-all duration-300 rounded-[1.2rem] p-3.5 flex items-center justify-between shadow-[0_2px_6px_-2px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_16px_-6px_rgba(30,58,138,0.1)]"
+                className="w-full group bg-white hover:bg-blue-50/50 transition-all duration-300 rounded-[1.2rem] p-3 flex items-center justify-between shadow-[0_2px_8px_-4px_rgba(0,0,0,0.08)] hover:shadow-md border border-transparent"
               >
                 <div className="flex items-center gap-4">
-                  {/* PERUBAHAN 2: Bagian Logo/Ikon dipaskan agar tidak terlihat memiliki border/kotak.
-                      Caranya: Saya menghapus warna background (bg-blue-50) di keadaan normal.
-                      Warna background hanya muncul saat di-hover (group-hover:bg-[#1e3a8a]).
-                      Ini membuat ikon terlihat bersih menyatu dengan latar belakang. */}
-                  <div className="text-[#1e3a8a] p-2 rounded-xl group-hover:bg-[#1e3a8a] group-hover:text-white transition-all duration-300 scale-100 group-hover:scale-105">
+                  
+                  {/* BAGIAN LOGO/IKON: Diperbarui */}
+                  {/* Menggunakan fixed width/height (w-11 h-11) + Flex center agar ikon pas di tengah */}
+                  {/* bg-blue-50 memberikan warna latar tanpa border garis */}
+                  <div className="w-11 h-11 flex items-center justify-center rounded-2xl bg-blue-50 text-[#1e3a8a] group-hover:bg-[#1e3a8a] group-hover:text-white transition-all duration-300 shadow-sm">
                     {item.icon}
                   </div>
                   
@@ -105,7 +103,7 @@ function App() {
                 </div>
                 
                 {/* Ikon Panah Kanan */}
-                <ChevronRight className="w-5 h-5 text-slate-300/70 group-hover:text-[#1e3a8a] group-hover:translate-x-1 transition-all duration-300" />
+                <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-[#1e3a8a] group-hover:translate-x-1 transition-all duration-300" />
               </button>
             ))}
           </div>
