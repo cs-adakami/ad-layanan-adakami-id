@@ -1,6 +1,5 @@
-import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { 
-  Lock, 
   ChevronRight, 
   ShieldCheck, 
   MessageCircle, 
@@ -181,6 +180,8 @@ function App() {
         </div>
 
       </div>
+
+      <Analytics />
     </div>
   );
 }
