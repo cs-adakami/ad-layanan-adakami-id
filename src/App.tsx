@@ -14,8 +14,8 @@ import {
 
 function App() {
   const contactInfo = {
-    wa: '62822122456',
-    phone: '0822122456',
+    wa: '628217506899',
+    phone: '08217506899',
     address: 'Gedung Cyber 2 Tower Lantai 28 Jl. HR Rasuna Said Blok X-5 No.13 RT/RW. 007/002 Kuningan Timur, Setia Budi, Jakarta Selatan 12950'
   };
   
