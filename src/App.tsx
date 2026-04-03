@@ -79,7 +79,7 @@ function App() {
               <div className="flex items-center justify-center gap-4 mb-4">
                  <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center p-2 border border-slate-100">
                     <img 
-                      src="https://github.com/cs-adakami/ADAKAMI/blob/main/unnamed.webp" 
+                      src="https://raw.githubusercontent.com/cs-adakami/AdakamiRGA/refs/heads/main/adakamiR.png" 
                       alt="Logo" 
                       className="w-full h-full object-contain"
                     />
